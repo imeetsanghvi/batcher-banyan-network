@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="container mb-2 p-3">
+
+
+</div>
+
+
+    <div class="container">
+        <div class="row">
+            <h1>Batcher-Banyan-Network</h1>
+        </div>
+        <div class="row">
+        <div class="col-sm p-3 mb-2">
+            <p>Enter the input array comma separated</p>
+            <form action="/" enctype="multipart/form-data" method="post">
+                <p>Array of Input - <input class="form-rounded" type = "text" name = "input_array" placeholder="E.g. 8,3,4,14,7,12,1"/></p>
+                <small class="label-info">don't use spaces & max numbers 15</small>
+                <br>
+                <input class="btn btn-success" type = "submit" value = "Submit" />
+            </form>
+        </div>
+
+        {% if method is string %}
+
+            {% if error is string %}
+                <div class="col-sm p-3 mb-2 bg-danger text-white">
+                    <ul>
+                        <li>{{error}}</li>
+                    </ul>
+                </div>
+            {% else %}
+                <div class="col-sm p-3 mb-2 bg-success text-white">
+                    <h4>Results: </h4>
+                    <ul>
+                    {% for value in results %}
+                        <li>{{value}}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        {% endif %}
+        </div>
+    </div>
+
+
+{% endblock %}
