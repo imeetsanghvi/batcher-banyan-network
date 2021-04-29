@@ -128,16 +128,16 @@ def banyan_network(list_of_packets: list):
 def main():
     mxm = 15
 
-    input_sequence = random.sample(range(0, mxm), 15)  # TODO change this 5 to dynamic update
+    input_sequence = random.sample(range(0, mxm), 15)
     print(f'Input Sequence = {input_sequence}')
     print()
 
     # batch implementation
     print("Batcher Network")
     sorted_input_sequence = batcher_sorter(input_sequence)
-    # print([str(x.data).rjust(4) for x in sorted_input_sequence])
     print(f'Sorted Input = {[x.data for x in sorted_input_sequence]}')
     print()
+
     #  banyan implementation
     print("Banyan Network")
     banyan_network(sorted_input_sequence)
@@ -145,6 +145,5 @@ def main():
         print(str(packet.data).rjust(2) + "  -->  " + "  -->  ".join(packet.path))
 
 
-if __name__ == '__main__':  # psvm
+if __name__ == '__main__':
     main()
-    # print(random.randint(0, 15))
