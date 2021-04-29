@@ -2,7 +2,7 @@
 
 IFT 510 Principles of Computer Information and Technology Architecture - Project Assignment 2 Submission
 
-Test the app here - https://batcher-banyan-network.herokuapp.com/
+Test the app [here](https://batcher-banyan-network.herokuapp.com/) - https://batcher-banyan-network.herokuapp.com/ 
 
 ## Question
 Create a computer program in the language of your choice that emulates a Banyan-Batcher-Network with 8x8 Inputs & Outputs. Then scale the output to 16x16 Delta Network. Use a random generator with 8 or 16 options to emulate the input table routing list with the assigned input port. Show that your simulation works for all inputs and outputs. Explain how your routing fabric changes when you have 16 inputs and outputs.
@@ -15,10 +15,10 @@ Make a video presentation that demonstrates how your network works. Submission -
 - Provide a copy of your source code
   * Please check my [Github Repo](https://github.com/imeetsanghvi/batcher-banyan-network) for more details
 - Provide a sequence of screenshots in the video to demonstrate the simulation and how the network works for all inputs and outputs (0-7). Ensure to separate the batcher sorter from the banyan network and how they work in conjunction
-  * everything is explained and demonstrated in detail in the video [here]()
+  * everything is explained and demonstrated in detail in the video [here](https://youtu.be/crPVfbQqSe4)
 - Provide a detailed discussion of results, and the concepts you used in developing the program. Discussions should include analysis and a comparison of the results with the expected value from the theory.
   * Explained thoroughly in video
-- Present the results in the video file and submit
+- Present the results in the [video](https://youtu.be/crPVfbQqSe4) file and submit 
 
 ## Explanation
 A Banyan network could essentially route any input to any out but in case of conflicts at any particular intermediate state would result in the loss of packets which are being passed through. To avoid this packet loss in the delta network we sort the input first before passing it to the banyan(delta) network which then correctly finds the path for each packet and routes them. 

@@ -7,9 +7,9 @@ class Packet:
 
     # init method or constructor
     def __init__(self, data: int):
-        self.data = data
-        self.bin = "{0:04b}".format(data)
-        self.path = []
+        self.data = data # 0
+        self.bin = "{0:04b}".format(data) # 0000
+        self.path = [] # list of column names # [a1,b1,c1,d1,outpu0]
 
     # Sample Method
     # def say_hi(self):
@@ -99,11 +99,15 @@ def initialize_switches():
 
 def find_path(packet):
     s1, s2, s3, s4 = initialize_switches()
+
     #  get where the packet will enter in the column A
     packet.path.append(input_ports.get(packet.data))
+    # packet.data = 3 ==> 0011
+    # ['A1']
 
     #  get where the packet will go from A to B
     packet.path.append(s1.get(packet.path[0])[0] if packet.bin[0] == '0' else s1.get(packet.path[0])[1])
+    # ['A1', 'B1']
 
     #  get where the packet will go from B to C
     # print(s2.get(packet.path[1])[0] if packet.bin[1] == '0')
@@ -111,10 +115,11 @@ def find_path(packet):
 
     #  get where the packet will go from C to D
     packet.path.append(s3.get(packet.path[2])[0] if packet.bin[2] == '0' else s3.get(packet.path[2])[1])
+    # ['A1', 'B1','C1', 'D2']
 
     #  get where the packet will go from D to output
     packet.path.append(s4.get(packet.path[3])[0] if packet.bin[3] == '0' else s4.get(packet.path[3])[1])
-
+    # ['A1', 'B1','C1', 'D2', 'OUTPUT 3']
 
 def banyan_network(list_of_packets: list):
     for packet in list_of_packets:
@@ -134,7 +139,7 @@ def main():
 
     # batch implementation
     print("Batcher Network")
-    sorted_input_sequence = batcher_sorter(input_sequence)
+    sorted_input_sequence = batcher_sorter(input_sequence) # list of packets
     print(f'Sorted Input = {[x.data for x in sorted_input_sequence]}')
     print()
 
@@ -143,7 +148,7 @@ def main():
     banyan_network(sorted_input_sequence)
     for packet in sorted_input_sequence:
         print(str(packet.data).rjust(2) + "  -->  " + "  -->  ".join(packet.path))
-
+        # print(packet.data, packet.path)
 
 if __name__ == '__main__':
     main()
