@@ -15,7 +15,7 @@ Make a video presentation that demonstrates how your network works. Submission -
 - Provide a detailed discussion of results, and the concepts you used in developing the program. Discussions should include analysis and a comparison of the results with the expected value from the theory. - Explained thoroughly in video
 - Present the results in the video file and submit
 
-### Explanation
+## Explanation
 A Banyan network could essentially route any input to any out but in case of conflicts at any particular intermediate state would result in the loss of packets which are being passed through. To avoid this packet loss in the delta network we sort the input first before passing it to the banyan(delta) network which then correctly finds the path for each packet and routes them. 
 
 The main logic is to 
@@ -31,7 +31,7 @@ The main logic is to
       
 ![img.png](img.png)
 
-### How to run this Code
+## How to run this Code
 1. The main logic is implemented inside bbn.py inside the main function
 2. to run the flask project
     * Requirements 
